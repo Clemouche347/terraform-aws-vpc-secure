@@ -8,5 +8,8 @@ It focuses on clean project structure, explicit variables, and reusable patterns
 - Public subnet
 - Private subnet
 - Internet Gateway
+- NAT Gateway
+- Public Route Table
+- Private Route Table
 
-Further improvements (NAT Gateway, route tables, security hardening) are added incrementally.
+Private subnets have outbound internet access through a NAT Gateway while remaining unreachable from the public Internet.
