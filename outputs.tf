@@ -21,3 +21,14 @@ output "public_route_table_id" {
 output "private_route_table_id" {
   value = aws_route_table.private.id
 }
+
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.this.bucket
+}
+
+output "s3_bucket_arn" {
+  value = aws_s3_bucket.this.arn
+}
+
+

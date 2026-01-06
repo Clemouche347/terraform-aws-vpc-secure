@@ -8,7 +8,6 @@ private_subnet_cidr = "10.1.2.0/24"
 
 tags                = {
   env     = "dev"
-  project = "secure-vpc"
   owner   = "clemv"
 
 }  
