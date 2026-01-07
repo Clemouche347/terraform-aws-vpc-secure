@@ -22,3 +22,9 @@ resources added
 - `aws_s3-bucket_versioning`
 - `aws_s3_bucket_server_side_encryption_configuration` (AES256)
 - lifecycle `prevent_destroy = true`
+
+## IAM
+IAM roles and policies are defined following the principle of least privilege.
+Access is restricted to the required S3 resources only.
+
+policy, role, attachment 

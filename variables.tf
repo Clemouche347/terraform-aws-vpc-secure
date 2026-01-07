@@ -1,16 +1,16 @@
 variable "aws_region" {
   description = "Region chosen for the VPC"
-  type  = string
+  type        = string
 }
 
 variable "project_name" {
   description = "Name of the project"
-  type = string
+  type        = string
 }
 
 variable "vpc_cidr" {
   description = "CIDR chosen for the VPC"
-  type = string
+  type        = string
 }
 
 variable "public_subnet_cidr" {

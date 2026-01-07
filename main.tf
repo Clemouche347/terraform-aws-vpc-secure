@@ -1,11 +1,11 @@
 resource "aws_vpc" "this" {
   cidr_block = var.vpc_cidr
-  
+
   tags = merge(
     var.tags,
-      {
-        Name = "${var.project_name}-vpc"
-    }     
+    {
+      Name = "${var.project_name}-vpc"
+    }
   )
 }
 
@@ -17,9 +17,9 @@ resource "aws_subnet" "public" {
 
   tags = merge(
     var.tags,
-      {
-        Name = "${var.project_name}-public_subnet"
-    }     
+    {
+      Name = "${var.project_name}-public_subnet"
+    }
   )
 }
 
@@ -31,9 +31,9 @@ resource "aws_subnet" "private" {
 
   tags = merge(
     var.tags,
-      {
-        Name = "${var.project_name}-private_subnet"
-    }     
+    {
+      Name = "${var.project_name}-private_subnet"
+    }
   )
 }
 
@@ -43,9 +43,9 @@ resource "aws_internet_gateway" "igw" {
 
   tags = merge(
     var.tags,
-      {
-        Name = "${var.project_name}-igw"
-    }     
+    {
+      Name = "${var.project_name}-igw"
+    }
   )
 }
 
@@ -91,10 +91,10 @@ resource "aws_route_table" "public" {
 
 resource "aws_route_table" "private" {
   vpc_id = aws_vpc.this.id
-  
+
   route {
-  cidr_block     = "0.0.0.0/0"
-  nat_gateway_id = aws_nat_gateway.this.id
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.this.id
   }
 
   tags = merge(

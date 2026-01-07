@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "${var.project_name}-bucket-${var.aws_region}" 
+  bucket = "${var.project_name}-bucket-${var.aws_region}"
 
   tags = merge(
     var.tags,
@@ -8,9 +8,9 @@ resource "aws_s3_bucket" "this" {
     }
   )
 
-  lifecycle {
-    prevent_destroy = true
-  }
+  #  lifecycle {
+  #    prevent_destroy = true
+  #  }
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
@@ -24,7 +24,7 @@ resource "aws_s3_bucket_public_access_block" "this" {
 
 resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.this.id
-  
+
   versioning_configuration {
     status = "Enabled"
   }
